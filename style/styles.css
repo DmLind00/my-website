@@ -1,0 +1,494 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* Disable scrolling for the entire page */
+}
+
+.row {
+  display: flex;
+  flex-direction: row; /* Default direction for larger screens */
+  height: 100vh; /* Full height of the viewport */
+  margin: 0; /* Remove any default margin */
+}
+
+.lsP, .rsP {
+  margin: 0; /* Remove any default margin */
+  padding: 0; /* Remove any default padding */
+  box-sizing: border-box; /* Include padding/border in the element's dimensions */
+}
+
+.lsP {
+  background-color: #f3f4f8;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  padding: 10px; /* Add padding for spacing */
+}
+
+.lsP h3 {
+  text-align: center; /* Center the text within the heading */
+  margin: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.rsP {
+  background: #f8f9fa; /* Light background for the right side panel */
+  padding: 20px;
+  overflow-y: none; /* Enable scrolling if content overflows */
+}
+
+.welcome-box {
+  display: inline-block; /* Box size based on content */
+  border: 2px solid #ddd; /* Border similar to .content */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Padding inside the box */
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  margin: 20px; /* Margin for spacing */
+}
+
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  text-align: center; /* Center text inside .card-body */
+  height: 100%; /* Ensure the card-body takes full height */
+}
+
+.card {
+  display: none; /* Hide all cards initially */
+}
+
+.card.show {
+  display: block; /* Show the card with class 'show' */
+}
+
+.myUL {
+  max-height: 100vh; /* Ensure it doesn’t exceed the viewport height */
+  overflow-y: auto;  /* Allow vertical scrolling if needed */
+}
+
+.lsP header img {
+  width: 150px; /* Reduce image size on smaller screens */
+  height: auto;
+}
+
+h3 {
+  padding-top: 5px;
+  display: block; /* Ensure the element is being displayed */
+  color: #000; /* Ensure text color is visible against background */
+  visibility: visible; /* Ensure the element is visible */
+}
+
+li {
+  padding-top: 4.483rem;
+}
+
+.Btn-nav {
+  display: block;
+  color: #6c757d; /* Grey text color */
+  background: none; /* Remove background */
+  text-align: center;
+  padding: 10px 20px; /* Add padding for spacing */
+  margin: 5px 0; /* Margin adjusted for vertical spacing */
+  text-decoration: underline; /* Add underline to text */
+  text-decoration-color: #6c757d; /* Underline color */
+  text-decoration-style: solid; /* Underline style */
+  text-decoration-thickness: 2px; /* Thickness of the underline */
+  border: none; /* Remove border */
+  font-size: 40px; /* Larger font size */
+  font-weight: normal; /* Normal text weight */
+  transition: color 0.3s, text-decoration-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+.Btn-nav:hover {
+  color: blue; /* Change text color on hover */
+  text-decoration-color: blue; /* Change underline color on hover */
+  transform: scale(1.1); /* Slightly increase size on hover */
+}
+
+.lsP-buttons {
+  display: flex;
+  flex-direction: column; /* Vertical layout on larger screens */
+}
+
+
+h4 {
+  place-items: top;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 28px;
+}
+
+.homeCard {
+  position: relative;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 2; /* Ensure the card content is above the background */
+}
+
+.homeCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/public/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(4px);
+  z-index: 1; /* Ensure it stays behind the card content */
+}
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2; /* Keep content above the background image */
+}
+
+
+.home-box {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  width: 80%; /* Responsive width */
+  max-width: 600px;
+  text-align: center;
+}
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Makes the container fill the entire viewport */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  z-index: 2;
+}
+
+.center {
+  font-size: 5vw; /* Responsive font size based on viewport width */
+  text-align: center;
+  color: black;
+  margin: 0; /* Reset margin */
+  padding: 0; /* Reset padding */
+  border-radius: 0; /* No additional border radius */
+  background-color: transparent; /* Ensure background color is transparent */
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Display ellipsis (...) if text overflows */
+}
+
+.minitext {
+  font-size: 33px;
+}
+
+.infoCard {
+  display: flex;
+  flex-direction: column;
+  height: auto; /* Let the card height adjust based on content */
+  min-height: 100vh; /* Ensure it at least takes up the full viewport height */
+  justify-content: flex-start; /* Align content to the top */
+  padding: 20px; /* Add padding for spacing */
+  box-sizing: border-box; /* Include padding in the element's dimensions */
+}
+
+.infoCard .card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between sections */
+  flex: 1; /* Allow the card body to grow and take up available space */
+}
+
+.infoCard h4 {
+  margin: 0; /* Remove default margin */
+  padding: 10px 0; /* Add padding for spacing */
+  font-size: 28px; /* Adjust font size */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Font styling */
+  text-align: center; /* Center the text */
+}
+
+.box-container {
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  margin-bottom: 20px; /* Space between box containers */
+  width: 100%; /* Full width */
+  max-width: 600px; /* Optional: Limit the width */
+}
+
+.box-container > * {
+  margin: 0;
+  padding: 10px; /* Adjust padding as needed */
+  box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+
+
+.contactCard .card-body {
+  padding: 20px; /* Adds padding inside the card-body */
+}
+
+.contact-info {
+  padding-bottom: 15px; /* Adds padding below the contact info section */
+}
+
+.social-media a {
+  display: inline; /* Ensure each social media link is on a new line */
+  padding: 10px; /* Adds vertical padding between social media links */
+}
+
+.contactCard h4 {
+  padding-bottom: 10px; /* Adds space between the header and the content */
+  text-align: center; /* Centers the header text */
+}
+
+.background-image {
+  width: 100vh;
+  height: 100vh;
+  display: block;
+}
+
+.card {
+  height: 100%;
+  overflow: hidden; /* Prevent scrolling inside the card */
+}
+
+h4 {
+  margin-top: 20px; /* Ensure spacing at the top */
+  text-align: center; /* Center the text */
+}
+
+.box-container {
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  margin-bottom: 20px; /* Space between box containers */
+  width: 100%; /* Full width */
+  max-width: 600px; /* Optional: Limit the width */
+}
+
+.content {
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center items horizontally */
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  width: 100%; /* Full width of the container */
+}
+
+.contentHeader {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column; /* Stack text vertically */
+  justify-content: center; /* Center text vertically */
+  align-items: center; /* Center text horizontally */
+  width: 100%; /* Full width of the content */
+}
+
+.contentText {
+  margin: 5px 0;
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 576px) {
+  .avatar {
+    display: none; /* Hide the avatar image on smaller screens */
+  }
+
+  .row {
+    flex-direction: column; /* Stack panels vertically on smaller screens */
+  }
+
+  .lsP {
+    flex: 0 1 15%; /* Make .lsP take up 25% of the viewport height */
+    max-height: 15%; /* Set a maximum height for .lsP */
+    overflow-y: none; /* Allow scrolling if needed */
+    justify-content: center; /* Centers horizontally */
+    align-items: center;     /* Centers vertically */
+  }
+
+  .lsP h3 {
+    text-align: center; /* Center the text within the heading */
+    margin: 0;
+  }
+
+  .rsP {
+    flex: 1; /* Take up the remaining space below .lsP */
+  }
+
+  .Btn-nav {
+    font-size: 1.0em; /* Adjust font size */
+    padding: 8px 12px; /* Add padding */
+  }
+
+  .lsP-buttons {
+    flex-direction: row; /* Ensure horizontal layout for buttons */
+    align-items: center; /* Align buttons vertically centered */
+  }
+
+  .infoCard{
+    height: 100vh; /* Full viewport height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding-top: 75px; /* Add some padding at the top */
+    padding-bottom: 70px; /* Add padding at the bottom */
+  }
+
+  /* Ensure the headers are part of the scrollable content */
+  .infoCard h4 {
+    margin-top: 0;
+    padding: 10px 0; /* Add padding for better spacing */
+    text-align: center;
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+    position: relative; /* Keep headers in the normal document flow */
+    z-index: 1; /* Ensure visibility over other content */
+    background-color: rgba(255, 255, 255, 0.9); /* Optional: background color to stand out */
+    width: 100%; /* Ensure it spans the width of the card */
+  }
+
+  /* For ensuring the content remains scrollable */
+  .infoCard .box-container {
+    flex: 1;
+    overflow-y: visible; /* Allow content to flow normally */
+  }
+
+  .content {
+    padding: 10px; /* Add padding to the content */
+  }
+
+
+  .welcome-box {
+    padding: 10px 10px; /* Further adjust padding for very small screens */
+    margin: 5px auto; /* Center the box with further adjusted margin */
+    max-width: 95%; /* Further increase maximum width for very small screens */
+  }
+
+  .center {
+    font-size: 25px; /* Increase font size for very small screens */
+  }
+
+  
+}
+
+@media (max-width: 768px) {
+  .lsP {
+    flex: 0 1 15%; /* Adjust height to be 15% of the viewport height */
+    max-height: 15vh; /* Ensure it doesn't exceed 15% of the viewport height */
+    overflow-y: auto; /* Allow vertical scrolling if content overflows */
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .lsP h3 {
+    font-size: 20px; /* Adjust font size for smaller screens */
+  }
+
+  .rsP {
+    position: relative;
+    top: auto;
+    width: 100%;
+    padding: 10px;
+    overflow: auto;
+  }
+
+  .lsP-buttons {
+    flex-direction: row; /* Ensure buttons are laid out horizontally */
+    justify-content: space-around; /* Distribute buttons evenly */
+    margin-top: 10px; /* Adjust margin to ensure buttons are visible */
+  }
+
+  .avatar {
+    display: none; /* Hide avatar on smaller screens */
+  }
+
+  .Btn-nav {
+    font-size: 16px; /* Adjust font size of buttons */
+    padding: 8px 12px; /* Adjust padding for buttons */
+  }
+
+
+
+  .welcome-box {
+    padding: 10px 15px; /* Adjust padding for smaller screens */
+    margin: 10px auto; /* Center the box with adjusted margin */
+    max-width: 90%; /* Increase maximum width for slightly smaller screens */
+  }
+
+  .center {
+    font-size: 6vw; /* Adjust font size for smaller screens */
+  }
+
+  .home-box {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .experienceCard {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevent scrolling outside the card */
+  }
+
+  .experienceCard section {
+    flex: 1; /* Allow the section to grow and fill available space */
+  }
+
+  .experienceCard .card-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensure the card-body takes full height of its container */
+    overflow: hidden; /* Prevent scrolling within the card-body */
+  }
+
+  .experienceCard .box-container {
+    flex: 1; /* Allow it to grow and take available space */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  }
+
+  .content{
+    overflow-y: auto;
+  }
+
+
+}
+
+@media (min-width: 769px) {
+  .lsP {
+    height: 100vh; /* Full height on larger screens */
+  }
+
+  .rsP {
+    margin-left: 0; /* Remove margin to align with .lsP */
+  }
+
+  .card-body {
+    flex-direction: column; /* Ensure column layout on smaller screens */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+  }
+}
+
+.noneScroll{
+  overflow-y: none;
+  overflow: none;
+}
